@@ -38,7 +38,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.static('public'));
 
 // agregar Router
-app.use('/inicio', router);
+app.use('/', router);
 
 app.listen(port, () =>{
     console.log(`El servidor esta funcionando en el puerto ${port}`);
