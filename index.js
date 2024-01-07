@@ -13,7 +13,7 @@ db.authenticate()
     .then(()=> console.log('Base de datos conectada'))
     .catch(error =>console.log(error))
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 3000;
 
 // req lo que enviamos o peticiones - res => lo que express responde
 
@@ -38,7 +38,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.static('public'));
 
 // agregar Router
-app.use('/', router);
+app.use('/inicio', router);
 
 app.listen(port, () =>{
     console.log(`El servidor esta funcionando en el puerto ${port}`);

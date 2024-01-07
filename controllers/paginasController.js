@@ -60,11 +60,11 @@ const paginasTestimoniales = async (req,res)=>{
 const paginasDetalleViaje = async (req,res) =>{
     const {slug} = req.params;
     try {
-        const resultado = await Viaje.findOne({where:{slug:slug}});
+        const viaje = await Viaje.findOne({where:{slug:slug}});
 
         res.render('viaje', {
             pagina: 'Información Viaje',
-            resultado
+            viaje
         })
 
     } catch (error) {
